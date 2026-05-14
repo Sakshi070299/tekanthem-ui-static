@@ -3,6 +3,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTA } from '@/components/sections/CTA'
 import { Stats } from '@/components/sections/Stats'
 
+
 export const metadata: Metadata = {
   title: 'About',
   description:
