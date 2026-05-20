@@ -119,11 +119,11 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <Button href="/login" variant="ghost" size="sm">
+          {/* <Button href="/login" variant="ghost" size="sm">
             Sign in
-          </Button>
+          </Button> */}
           <Button href="/contact?intent=demo" size="sm">
-            Get a demo
+            Request for demo
           </Button>
         </div>
 

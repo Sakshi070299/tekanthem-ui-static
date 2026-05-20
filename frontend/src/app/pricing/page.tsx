@@ -45,7 +45,7 @@ const PLANS = [
       'Chat support',
     ],
     excludes: ['Multi-entity consolidation'],
-    cta: 'Start 30-day trial',
+    cta: 'Start 90-day trial',
     popular: true,
   },
   {
@@ -64,7 +64,7 @@ const PLANS = [
       '99.95% uptime SLA',
     ],
     excludes: [],
-    cta: 'Start 30-day trial',
+    cta: 'Start 90-day trial',
     popular: false,
   },
   {
@@ -139,7 +139,7 @@ const FAQS = [
 export default function PricingPage() {
   return (
     <>
-      <section className="pt-20 pb-8 lg:pt-28">
+      <section className="section-page-head">
         <div className="container-pro">
           <SectionHeading
             eyebrow="Pricing"
@@ -155,7 +155,7 @@ export default function PricingPage() {
       </section>
 
       {/* Plans grid */}
-      <section className="py-12">
+      <section className="section-block">
         <div className="container-pro">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PLANS.map((plan) => (
@@ -221,7 +221,7 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison */}
-      <section className="py-20 lg:py-24">
+      <section className="section-block">
         <div className="container-pro">
           <SectionHeading
             eyebrow="Compare"
@@ -286,7 +286,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-ink-50/60 border-y border-ink-200/70">
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
         <div className="container-pro max-w-3xl">
           <SectionHeading eyebrow="FAQ" title="Pricing questions" align="left" />
           <div className="mt-10 divide-y divide-ink-200 border-t border-b border-ink-200">

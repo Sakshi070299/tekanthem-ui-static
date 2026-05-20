@@ -18,7 +18,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-28">
+      <section className="section-page-head">
         <div className="container-pro">
           <SectionHeading
             eyebrow="Tekanthem Blog"
@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
       </section>
 
       {/* Featured */}
-      <section className="pb-12">
+      <section className="section-block-continue">
         <div className="container-pro">
           <Link
             href={`/blog/${featured.slug}`}
@@ -74,7 +74,7 @@ export default function BlogIndexPage() {
       </section>
 
       {/* Grid */}
-      <section className="py-12 pb-24">
+      <section className="section-block">
         <div className="container-pro">
           <h2 className="font-display text-2xl font-bold text-ink-900">
             Latest articles

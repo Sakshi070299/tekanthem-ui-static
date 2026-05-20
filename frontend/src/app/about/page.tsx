@@ -1,115 +1,293 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import {
+  Brain,
+  Workflow,
+  Plug,
+  Code2,
+  CloudUpload,
+  Sparkles,
+  ShieldCheck,
+  Target,
+  Users,
+  Lightbulb,
+  Award,
+  Handshake,
+} from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTA } from '@/components/sections/CTA'
-import { Stats } from '@/components/sections/Stats'
-
+import { TEAM } from '@/data/team'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Us',
   description:
-    'Tekanthem is on a mission to give every Indian business an integrated, modern operating system that just works.',
+    'Tekanthem is a pioneer in leveraging Artificial Intelligence to transform the way software is developed and deployed — empowering businesses with intelligent solutions.',
 }
+
+const KEY_OFFERINGS = [
+  {
+    icon: Brain,
+    title: 'AI-Powered Applications',
+    description:
+      'We design and develop AI-driven applications tailored to your business needs, from predictive analytics to personalised user experiences.',
+  },
+  {
+    icon: Workflow,
+    title: 'Intelligent Automation',
+    description:
+      'Automate repetitive tasks and optimise workflows with our AI solutions, enabling your team to focus on higher-value activities.',
+  },
+  {
+    icon: Plug,
+    title: 'Integration',
+    description:
+      'Seamlessly integrate AI capabilities into your existing systems and applications, enhancing their functionality and performance.',
+  },
+  {
+    icon: Code2,
+    title: 'Custom Software Development',
+    description:
+      'Our Custom Software Development services offer bespoke solutions crafted to meet the specific demands of your business.',
+  },
+  {
+    icon: CloudUpload,
+    title: 'Cloud Migration',
+    description:
+      'Our Cloud Migration services help your business efficiently and securely transition from on-premises infrastructure to the cloud.',
+  },
+] as const
+
+const WHY_CHOOSE = [
+  {
+    icon: Sparkles,
+    title: 'AI-First Philosophy',
+    description:
+      'We are dedicated to an AI-first approach, meaning that artificial intelligence is at the heart of everything we do — from conception to deployment.',
+  },
+  {
+    icon: Users,
+    title: 'Expert Team',
+    description:
+      'Our team of AI researchers, data scientists, and software engineers brings together deep expertise and innovative thinking to deliver exceptional results.',
+  },
+] as const
 
 const VALUES = [
   {
-    title: 'Customer obsession',
+    icon: Lightbulb,
+    title: 'Innovation',
     description:
-      'We talk to customers every day. Our roadmap is built on real conversations, not opinions in a room.',
+      'We continuously explore new ideas and technologies to stay ahead of the curve and deliver cutting-edge solutions.',
   },
   {
-    title: 'Indian by design',
+    icon: ShieldCheck,
+    title: 'Integrity',
     description:
-      'GST, TDS, PF, ESI — built natively, not bolted on. We know what running a business in India actually feels like.',
+      'We operate with the highest level of professionalism and transparency, fostering trust with our clients and partners.',
   },
   {
-    title: 'Speed beats perfection',
+    icon: Award,
+    title: 'Excellence',
     description:
-      'Ship weekly. Listen. Iterate. The fastest team learns the most — and we love learning.',
+      'We are committed to delivering top-tier quality in every project we undertake.',
   },
   {
-    title: 'Quality is non-negotiable',
+    icon: Handshake,
+    title: 'Collaboration',
     description:
-      'Speed without quality is reckless. Every release ships with tests, security review, and design polish.',
+      'We believe in the power of teamwork and work closely with our clients to achieve their goals.',
   },
 ] as const
 
-const TEAM = [
-  { name: 'Arjun Vasist', role: 'Co-founder & CEO', city: 'Hyderabad' },
-  { name: 'Meera Krishnan', role: 'Co-founder & CTO', city: 'Bangalore' },
-  { name: 'Devansh Patel', role: 'Head of Product', city: 'Mumbai' },
-  { name: 'Aisha Khan', role: 'Head of Design', city: 'Pune' },
-  { name: 'Rahul Verma', role: 'Head of Engineering', city: 'Hyderabad' },
-  { name: 'Sneha Iyer', role: 'Head of Customer', city: 'Chennai' },
-] as const
+/** Renders a team member's photo if provided, otherwise a clean initials avatar. */
+function TeamAvatar({ name, image }: { name: string; image?: string }) {
+  if (image) {
+    return (
+      <div className="relative h-28 w-28 overflow-hidden rounded-2xl ring-1 ring-ink-200">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="112px"
+          className="object-cover"
+        />
+      </div>
+    )
+  }
+  return (
+    <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-100 to-accent-100 text-2xl font-bold text-ink-700 ring-1 ring-ink-200">
+      {name
+        .split(' ')
+        .map((s) => s[0])
+        .join('')}
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-28">
+      {/* Hero */}
+      <section className="section-page-head">
         <div className="container-pro">
           <SectionHeading
-            eyebrow="About Tekanthem"
+            eyebrow="About Us"
             title={
               <>
-                Building the{' '}
-                <span className="gradient-text">operating system</span>
-                {' '}for Indian business
+                Pioneering an{' '}
+                <span className="gradient-text">AI-first</span> future of
+                software
               </>
             }
-            description="We started Tekanthem in 2023 because running a business in India still meant juggling five different tools, spreadsheets, and CAs. We knew it could be better — so we built it."
+            description="At Tekanthem, we are pioneers in leveraging Artificial Intelligence to transform the way software is developed and deployed. Our mission is to empower businesses with intelligent solutions that drive efficiency, innovation, and business growth."
           />
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="container-pro">
-          <div className="rounded-3xl bg-gradient-to-br from-brand-50 via-white to-accent-50 border border-ink-200 p-10 sm:p-14">
-            <div className="max-w-3xl">
-              <h2 className="heading-3">Our story</h2>
-              <div className="mt-6 space-y-4 text-ink-700 leading-relaxed">
-                <p>
-                  Tekanthem was founded by a team of engineers, accountants
-                  and operators who spent a decade running businesses across
-                  finance, logistics and SaaS. We saw the same pattern
-                  everywhere: companies were stitching together Tally, Excel,
-                  WhatsApp groups, and ten different SaaS tools to keep things
-                  moving.
-                </p>
-                <p>
-                  The data didn&apos;t flow. The reports were always late. The
-                  CA was always chasing. And the founder was always tired.
-                </p>
-                <p className="font-semibold text-ink-900">
-                  We are building the system we always wished existed — one
-                  unified platform where finance, payroll, logistics and sales
-                  speak the same language.
-                </p>
-              </div>
+      {/* Who We Are */}
+      <section className="section-block">
+        <div className="container-pro grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <span className="eyebrow">Who We Are</span>
+            <h2 className="heading-3 mt-4">
+              Intelligent solutions for a fast-moving world
+            </h2>
+            <p className="lead mt-5">
+              At Tekanthem, we are pioneers in leveraging Artificial
+              Intelligence to transform the way software is developed and
+              deployed. Our mission is to empower businesses with intelligent
+              solutions that drive efficiency, innovation, and business growth.
+            </p>
+          </div>
+          {/* Image slot — drop a file in public/images/about/ and update src */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-brand-100 via-ink-100 to-accent-100 ring-1 ring-ink-200">
+            {/*
+              To use a real photo:
+              <Image src="/images/about/who-we-are.jpg" alt="Tekanthem team" fill className="object-cover" />
+            */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Brain className="h-20 w-20 text-brand-300" />
             </div>
           </div>
         </div>
       </section>
 
-      <Stats />
+      {/* Vision & Mission */}
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
+        <div className="container-pro grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-ink-200 bg-white p-8">
+            <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
+              <Target className="h-5 w-5" />
+            </div>
+            <h3 className="mt-5 text-xl font-semibold text-ink-900">
+              Our Vision
+            </h3>
+            <p className="mt-3 text-ink-600 leading-relaxed">
+              We envision a world where AI is at the core of every
+              technological advancement, enabling seamless integration of
+              intelligence into every aspect of software development. Our goal
+              is to lead this transformation by making AI-first development the
+              new standard in the industry.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-ink-200 bg-white p-8">
+            <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 text-accent-700 ring-1 ring-accent-200">
+              <Sparkles className="h-5 w-5" />
+            </div>
+            <h3 className="mt-5 text-xl font-semibold text-ink-900">
+              Our Mission
+            </h3>
+            <p className="mt-3 text-ink-600 leading-relaxed">
+              Our mission is to deliver state-of-the-art AI-driven software
+              solutions that solve complex problems, enhance user experiences,
+              and unlock new opportunities for businesses across the globe. We
+              are committed to pushing the boundaries of what&apos;s possible
+              with AI, ensuring our clients stay ahead in an ever-evolving
+              digital landscape.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Values */}
-      <section className="py-20 lg:py-24 bg-ink-50/60 border-y border-ink-200/70">
+      {/* What We Do */}
+      <section className="section-block">
         <div className="container-pro">
           <SectionHeading
-            eyebrow="What we believe"
-            title="Our values"
-            align="center"
+            eyebrow="What We Do"
+            title="Smart, scalable and future-proof software"
+            description="We specialise in creating intelligent, data-driven applications designed to learn, adapt, and improve over time. Our AI-first approach integrates machine learning, natural language processing, computer vision, and other advanced AI technologies into the fabric of software development."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14">
+            <h3 className="text-center font-display text-xl font-semibold text-ink-900">
+              Our Key Offerings
+            </h3>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {KEY_OFFERINGS.map((o) => (
+                <div
+                  key={o.title}
+                  className="rounded-2xl border border-ink-200 bg-white p-7 transition-all hover:border-brand-200 hover:shadow-card"
+                >
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
+                    <o.icon className="h-5 w-5" />
+                  </div>
+                  <h4 className="mt-5 text-lg font-semibold text-ink-900">
+                    {o.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-600">
+                    {o.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
+        <div className="container-pro">
+          <SectionHeading eyebrow="Why Choose Us" title="Built on expertise" />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {WHY_CHOOSE.map((w) => (
+              <div
+                key={w.title}
+                className="flex gap-4 rounded-2xl border border-ink-200 bg-white p-8"
+              >
+                <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white">
+                  <w.icon className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-ink-900">
+                    {w.title}
+                  </h3>
+                  <p className="mt-2 text-ink-600 leading-relaxed">
+                    {w.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="section-block">
+        <div className="container-pro">
+          <SectionHeading eyebrow="Our Values" title="What we stand for" />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((v) => (
               <div
                 key={v.title}
                 className="rounded-2xl border border-ink-200 bg-white p-7"
               >
-                <h3 className="text-lg font-semibold text-ink-900">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 text-accent-700 ring-1 ring-accent-200">
+                  <v.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-lg font-semibold text-ink-900">
                   {v.title}
                 </h3>
-                <p className="mt-2 text-ink-600 leading-relaxed">
+                <p className="mt-2 text-sm leading-relaxed text-ink-600">
                   {v.description}
                 </p>
               </div>
@@ -118,34 +296,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 lg:py-24">
+      {/* Our Team */}
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
         <div className="container-pro">
           <SectionHeading
-            eyebrow="Leadership"
+            eyebrow="Our Team"
             title="The people behind Tekanthem"
-            align="center"
+            description="A leadership team that blends product vision, engineering depth, and a relentless focus on customers."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {TEAM.map((m) => (
+          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-3">
+            {TEAM.map((member) => (
               <div
-                key={m.name}
-                className="flex items-center gap-4 rounded-2xl border border-ink-200 bg-white p-5"
+                key={member.name}
+                className={cn(
+                  'flex flex-col items-center rounded-2xl border border-ink-200 bg-white p-7 text-center',
+                )}
               >
-                <div className="h-14 w-14 flex-shrink-0 rounded-full bg-gradient-to-br from-brand-200 to-accent-200 flex items-center justify-center font-bold text-ink-800">
-                  {m.name
-                    .split(' ')
-                    .map((s) => s[0])
-                    .join('')}
-                </div>
-                <div>
-                  <div className="font-semibold text-ink-900">{m.name}</div>
-                  <div className="text-sm text-ink-600">{m.role}</div>
-                  <div className="text-xs text-ink-500">{m.city}</div>
-                </div>
+                <TeamAvatar name={member.name} image={member.image} />
+                <h3 className="mt-5 text-lg font-semibold text-ink-900">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-sm text-brand-700">{member.role}</p>
               </div>
             ))}
           </div>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-ink-400">
+            To add a photo for any team member, drop the image into{' '}
+            <code className="rounded bg-ink-100 px-1.5 py-0.5 text-ink-600">
+              public/images/team/
+            </code>{' '}
+            and set the{' '}
+            <code className="rounded bg-ink-100 px-1.5 py-0.5 text-ink-600">
+              image
+            </code>{' '}
+            field in{' '}
+            <code className="rounded bg-ink-100 px-1.5 py-0.5 text-ink-600">
+              src/data/team.ts
+            </code>
+            .
+          </p>
         </div>
       </section>
 

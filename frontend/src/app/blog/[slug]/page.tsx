@@ -43,8 +43,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
-      <article className="pt-12">
-        <div className="container-pro max-w-3xl">
+      <article className="section-article">
+        <div className="container-pro">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-sm text-ink-600 hover:text-brand-700"
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       </article>
 
       {related.length > 0 && (
-        <section className="py-20">
+        <section className="section-block">
           <div className="container-pro">
             <h2 className="font-display text-2xl font-bold text-ink-900">
               More from {post.category}

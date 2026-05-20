@@ -20,7 +20,7 @@ const FEATURES: Record<string, string[]> = {
 
 export function ProductSuite() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="section-block">
       <div className="container-pro">
         <SectionHeading
           eyebrow="The Tekanthem Suite"

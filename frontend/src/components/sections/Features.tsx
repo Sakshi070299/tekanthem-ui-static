@@ -10,6 +10,12 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const FEATURES = [
   {
+    icon: Sparkles,
+    title: 'AI assist, everywhere',
+    description:
+      'Auto-categorize transactions, draft proposals, predict churn, and answer questions in plain English.',
+  },
+  {
     icon: ShieldCheck,
     title: 'Bank-grade security',
     description:
@@ -39,17 +45,12 @@ const FEATURES = [
     description:
       'Real-time dashboards, drill-down P&L, AR aging, and customizable views. Export to Excel in one click.',
   },
-  {
-    icon: Sparkles,
-    title: 'AI assist, everywhere',
-    description:
-      'Auto-categorize transactions, draft proposals, predict churn, and answer questions in plain English.',
-  },
+ 
 ] as const
 
 export function Features() {
   return (
-    <section className="py-20 lg:py-28 bg-ink-50/60 border-y border-ink-200/70">
+    <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
       <div className="container-pro">
         <SectionHeading
           eyebrow="Why Tekanthem"

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button'
 
 export function CTA() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="section-block">
       <div className="container-pro">
         <div className="relative overflow-hidden rounded-3xl bg-white border border-ink-200 px-6 sm:px-12 py-16 sm:py-20 text-center shadow-card">
           <div
@@ -21,7 +21,7 @@ export function CTA() {
               <span className="gradient-text">one platform?</span>
             </h2>
             <p className="lead mt-5">
-              Start with any product. Add the rest as you grow. 30-day free
+              Start with any product. Add the rest as you grow. 90-day free
               trial, no credit card.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">

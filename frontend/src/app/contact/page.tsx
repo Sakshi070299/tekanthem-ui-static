@@ -34,7 +34,7 @@ const REASONS = [
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-28">
+      <section className="section-page-head">
         <div className="container-pro">
           <div className="max-w-3xl">
             <span className="eyebrow">Contact</span>
@@ -49,7 +49,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-20 lg:pb-28">
+      <section className="section-block">
         <div className="container-pro">
           <div className="grid gap-10 lg:grid-cols-5">
             {/* Form */}
@@ -77,13 +77,15 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-brand-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-medium text-ink-900">Headquarters</div>
+                      <div className="font-medium text-ink-900">
+                        Registered Office
+                      </div>
                       <div className="text-ink-600">
-                        Tekanthem Technologies Pvt Ltd
+                        Tekanthem
                         <br />
-                        Hitec City, Hyderabad 500081
+                        1064 Sector-A, Pocket-B, Vasant Kunj
                         <br />
-                        Telangana, India
+                        New Delhi - 110070, India
                       </div>
                     </div>
                   </div>

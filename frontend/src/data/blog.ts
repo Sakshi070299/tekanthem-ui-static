@@ -102,7 +102,7 @@ On integration: payroll touches finance (provisions, journals), accounting (TDS 
 
 On TCO: per-employee pricing sounds simple, but watch for hidden costs — onboarding fees, premium support, advanced reporting add-ons, and integration costs. Always ask for an all-in quote.
 
-Tekanthem Payroll covers all four, with native integration to the rest of the Tekanthem Suite. That said, the best tool is the one that fits your team's workflow — so always run a 30-day trial before committing.`,
+Tekanthem Payroll covers all four, with native integration to the rest of the Tekanthem Suite. That said, the best tool is the one that fits your team's workflow — so always run a 90-day trial before committing.`,
   },
   {
     slug: 'engineering-tekanthem-data-platform',

@@ -1,13 +1,13 @@
 const STATS = [
-  { value: '2,000+', label: 'Active businesses' },
-  { value: '₹1,200 Cr+', label: 'Processed annually' },
-  { value: '99.97%', label: 'Uptime SLA' },
-  { value: '< 4 hrs', label: 'Median support response' },
+  { value: '4', label: 'Suite products on one platform' },
+  { value: 'India', label: 'GST, payroll & ops assumptions baked in' },
+  { value: 'Weekly', label: 'Shipping cadence from real usage' },
+  { value: 'Direct', label: 'Talk to the people building the product' },
 ] as const
 
 export function Stats() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="section-block">
       <div className="container-pro">
         <div className="rounded-3xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-950 px-6 sm:px-12 py-14 text-white overflow-hidden relative">
           <div

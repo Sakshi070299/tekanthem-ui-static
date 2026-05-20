@@ -34,9 +34,7 @@ export function ContactForm() {
   async function onSubmit(values: ContactFormValues) {
     setStatus('idle')
     try {
-      const apiUrl =
-        process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/api'
-      const res = await fetch(`${apiUrl}/contact`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),

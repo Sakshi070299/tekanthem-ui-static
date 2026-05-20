@@ -1,0 +1,2 @@
+# Drop About-page section images here (e.g. who-we-are.jpg)
+# Then swap the placeholder <div> in src/app/about/page.tsx for an <Image>.

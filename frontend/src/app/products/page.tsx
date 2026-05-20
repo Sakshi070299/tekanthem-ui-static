@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ProductsIndexPage() {
   return (
     <>
-      <section className="pt-20 pb-8 lg:pt-28">
+      <section className="section-page-head">
         <div className="container-pro max-w-3xl text-center">
           <span className="eyebrow">The Tekanthem Suite</span>
           <h1 className="heading-1 mt-6 text-balance">

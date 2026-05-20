@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/Button'
 
 const HIGHLIGHTS = [
   'GST & TDS ready out of the box',
-  '30-day free trial · No card needed',
-  'Trusted by 2,000+ Indian businesses',
+  '90-day free trial · No card needed',
+  'Built in India — we ship weekly with early teams',
 ]
 
 export function Hero() {
@@ -13,7 +13,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-hero pointer-events-none" aria-hidden />
       <div className="absolute inset-x-0 top-0 h-[640px] bg-grid-faint bg-[size:48px_48px] [mask-image:linear-gradient(to_bottom,white,transparent_80%)] pointer-events-none" aria-hidden />
 
-      <div className="container-pro relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-32">
+      <div className="container-pro relative section-hero">
         <div className="mx-auto max-w-4xl text-center">
           <span className="eyebrow">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-600 animate-pulse" />
@@ -58,7 +58,7 @@ export function Hero() {
               <span className="h-3 w-3 rounded-full bg-amber-400" />
               <span className="h-3 w-3 rounded-full bg-emerald-400" />
               <span className="ml-3 text-xs font-mono text-ink-500">
-                app.tekanthem.com/dashboard
+              tekanthem.com/dashboard
               </span>
             </div>
             <div className="grid grid-cols-12 min-h-[420px]">

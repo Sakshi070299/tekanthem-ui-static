@@ -4,9 +4,10 @@ export const SITE = {
   description:
     'Tekanthem is an integrated business operating system — Finance, Payroll, C&F and CRM — built for growing enterprises in India and beyond.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tekanthem.com',
-  email: 'hello@tekanthem.com',
-  phone: '+91 98765 43210',
-  address: 'Hyderabad, Telangana, India',
+  email: 'sales@tekanthem.com',
+  phone: '+91 77768 33097',
+  address:
+    'Registered Office: 1064 Sector-A, Pocket-B, Vasant Kunj, New Delhi - 110070',
   social: {
     twitter: 'https://twitter.com/tekanthem',
     linkedin: 'https://linkedin.com/company/tekanthem',

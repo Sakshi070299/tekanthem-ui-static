@@ -25,7 +25,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero pointer-events-none" aria-hidden />
-        <div className="container-pro relative pt-16 pb-20 sm:pt-24 lg:pt-28">
+        <div className="container-pro relative section-hero">
           <div className="mx-auto max-w-3xl text-center">
             <span className={cn('eyebrow')}>
               {product.hero.badge}
@@ -104,7 +104,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       </section>
 
       {/* Features grid */}
-      <section className="py-20 lg:py-28 bg-ink-50/60 border-y border-ink-200/70">
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
         <div className="container-pro">
           <SectionHeading
             eyebrow="Capabilities"
@@ -140,7 +140,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 lg:py-24">
+      <section className="section-block">
         <div className="container-pro">
           <div className="grid gap-8 sm:grid-cols-3">
             {product.benefits.map((b) => (
@@ -167,7 +167,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       </section>
 
       {/* Modules pill list */}
-      <section className="py-16 bg-ink-50/60 border-y border-ink-200/70">
+      <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
         <div className="container-pro">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-3">Inside {product.name}</h2>
@@ -190,8 +190,8 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 lg:py-24">
-        <div className="container-pro max-w-3xl">
+      <section className="section-block">
+        <div className="container-pro">
           <SectionHeading
             eyebrow="FAQ"
             title="Frequently asked questions"
@@ -217,7 +217,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="pb-20">
+      <section className="section-block">
         <div className="container-pro">
           <div
             className={cn(
@@ -225,7 +225,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
               accent,
             )}
           >
-            <h2 className="font-display text-3xl sm:text-4xl font-bold">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
               See {product.name} in action
             </h2>
             <p className="mt-4 text-white/90 max-w-xl mx-auto">
@@ -244,7 +244,7 @@ export function ProductPage({ product, accent }: ProductPageProps) {
               <Button
                 href="/pricing"
                 variant="outline"
-                className="!border-white/30 !text-white hover:!bg-white/10"
+                className="!border-white/30 !text-white bg-transparent hover:!bg-white/10"
                 size="lg"
               >
                 Compare plans

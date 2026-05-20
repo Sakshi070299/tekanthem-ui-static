@@ -18,6 +18,18 @@ export const contactFormSchema = z.object({
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>
 
+export const callbackFormSchema = z.object({
+  name: z.string().min(2, 'Please enter your name').max(120),
+  phone: z
+    .string()
+    .min(8, 'Please enter a valid mobile number')
+    .max(20)
+    .regex(/^[0-9+\-\s()]+$/, 'Please enter a valid mobile number'),
+  email: z.string().email('Please enter a valid email'),
+})
+
+export type CallbackFormValues = z.infer<typeof callbackFormSchema>
+
 export const newsletterSchema = z.object({
   email: z.string().email('Please enter a valid email'),
 })

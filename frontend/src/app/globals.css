@@ -68,6 +68,27 @@
   .card-pro {
     @apply rounded-2xl border border-ink-200 bg-white p-6 shadow-card transition-all hover:shadow-elevated hover:-translate-y-0.5;
   }
+
+  /* Sitewide section vertical rhythm (pages + marketing sections) */
+  .section-page-head {
+    @apply pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-16;
+  }
+
+  .section-hero {
+    @apply pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32;
+  }
+
+  .section-block {
+    @apply py-10 lg:py-16;
+  }
+
+  .section-block-continue {
+    @apply pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-28;
+  }
+
+  .section-article {
+    @apply pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-20;
+  }
 }
 
 @layer utilities {

@@ -48,7 +48,7 @@ const QUOTES = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="section-block">
       <div className="container-pro">
         <SectionHeading
           eyebrow="Customer love"

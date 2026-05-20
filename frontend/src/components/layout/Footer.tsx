@@ -5,7 +5,7 @@ import { FOOTER_LINKS, SITE } from '@/lib/site'
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-ink-200 bg-ink-50/60">
+    <footer className=" border-t border-ink-200 bg-ink-50/60">
       <div className="container-pro py-16">
         <div className="grid gap-10 lg:grid-cols-6">
           <div className="lg:col-span-2">

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { CookieConsent } from '@/components/ui/CookieConsent'
+import { RequestCallbackPopup } from '@/components/sections/RequestCallbackPopup'
 import { SITE } from '@/lib/site'
 import './globals.css'
 
@@ -74,10 +76,12 @@ export default function RootLayout({
     description: SITE.description,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Hyderabad',
-      addressRegion: 'Telangana',
+      streetAddress: '1064 Sector-A, Pocket-B, Vasant Kunj',
+      addressLocality: 'New Delhi',
+      postalCode: '110070',
       addressCountry: 'IN',
     },
+    telephone: '+91-7776833097',
     sameAs: [
       SITE.social.twitter,
       SITE.social.linkedin,
@@ -99,6 +103,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieConsent />
+        <RequestCallbackPopup />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
