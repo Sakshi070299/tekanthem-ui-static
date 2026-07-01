@@ -50,7 +50,7 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
+    <section className="py-8 lg:py-12 bg-ink-50/60 border-y border-ink-200/70">
       <div className="container-pro">
         <SectionHeading
           eyebrow="Why Tekanthem"
@@ -58,19 +58,19 @@ export function Features() {
           description="We obsessed over the details so your team doesn't have to. From compliance to UX, every decision is made with growth in mind."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl border border-ink-200 bg-white p-7 transition-all hover:border-brand-200 hover:shadow-card"
+              className="rounded-2xl border border-ink-200 bg-white p-5 transition-all hover:border-brand-200 hover:shadow-card"
             >
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
                 <f.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-ink-900">
+              <h3 className="mt-3 text-base font-semibold text-ink-900">
                 {f.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-600">
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-600">
                 {f.description}
               </p>
             </div>

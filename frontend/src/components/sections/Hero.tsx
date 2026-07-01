@@ -13,23 +13,23 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-hero pointer-events-none" aria-hidden />
       <div className="absolute inset-x-0 top-0 h-[640px] bg-grid-faint bg-[size:48px_48px] [mask-image:linear-gradient(to_bottom,white,transparent_80%)] pointer-events-none" aria-hidden />
 
-      <div className="container-pro relative section-hero">
+      <div className="container-pro relative py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <span className="eyebrow">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-600 animate-pulse" />
             Tekanthem Suite 2026 · Now with AI Assist
           </span>
-          <h1 className="heading-1 mt-6 text-balance">
+          <h1 className="heading-2 mt-4 text-balance">
             One platform for your{' '}
             <span className="gradient-text">entire business</span>
           </h1>
-          <p className="lead mt-6 mx-auto max-w-2xl text-balance">
+          <p className="mt-4 mx-auto max-w-2xl text-balance text-ink-600 text-base leading-relaxed">
             Run finance, payroll, clearing &amp; forwarding, and customer
             relationships from a single integrated system. Built for India,
             ready for the world.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button href="/contact?intent=demo" size="lg">
               Start free trial
               <ArrowRight className="h-4 w-4" />
@@ -39,7 +39,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-600">
+          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-600">
             {HIGHLIGHTS.map((h) => (
               <li key={h} className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-emerald-600" />
@@ -50,7 +50,7 @@ export function Hero() {
         </div>
 
         {/* Product preview mockup */}
-        <div className="mt-16 sm:mt-20 relative mx-auto max-w-5xl">
+        <div className="mt-10 relative mx-auto max-w-5xl">
           <div className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-brand-600/20 via-brand-500/10 to-accent-500/20 blur-2xl rounded-3xl" aria-hidden />
           <div className="relative rounded-2xl border border-ink-200 bg-white shadow-elevated overflow-hidden">
             <div className="flex items-center gap-1.5 border-b border-ink-200 bg-ink-50 px-4 py-2.5">
@@ -61,7 +61,7 @@ export function Hero() {
               tekanthem.com/dashboard
               </span>
             </div>
-            <div className="grid grid-cols-12 min-h-[420px]">
+            <div className="grid grid-cols-12 min-h-[300px]">
               <aside className="col-span-3 border-r border-ink-200 bg-ink-50/50 p-4 space-y-1.5">
                 {['Dashboard', 'Finance', 'Payroll', 'C&F', 'CRM', 'Reports', 'Settings'].map(
                   (item, i) => (

@@ -24,9 +24,9 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-      <h2 className="heading-2 mt-4 text-balance">{title}</h2>
+      <h2 className="heading-3 mt-3 text-balance">{title}</h2>
       {description ? (
-        <p className="lead mt-5 text-balance">{description}</p>
+        <p className="mt-3 text-ink-600 text-base leading-relaxed text-balance">{description}</p>
       ) : null}
     </div>
   )

@@ -11,7 +11,7 @@ export const contactFormSchema = z.object({
     .or(z.literal('')),
   company: z.string().min(2, 'Please enter your company name').max(120),
   employees: z.enum(['1-10', '11-50', '51-200', '201-1000', '1000+']).optional(),
-  product: z.enum(['suite', 'finance', 'payroll', 'cnf', 'crm']).optional(),
+  product: z.array(z.enum(['suite', 'finance', 'payroll', 'cnf', 'crm'])).optional(),
   message: z.string().min(10, 'Please tell us a bit more').max(2000),
   intent: z.enum(['demo', 'sales', 'trial', 'general']).default('general'),
 })

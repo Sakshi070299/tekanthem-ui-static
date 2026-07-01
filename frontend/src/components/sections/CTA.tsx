@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/Button'
 
 export function CTA() {
   return (
-    <section className="section-block">
+    <section className="py-8 lg:py-12">
       <div className="container-pro">
-        <div className="relative overflow-hidden rounded-3xl bg-white border border-ink-200 px-6 sm:px-12 py-16 sm:py-20 text-center shadow-card">
+        <div className="relative overflow-hidden rounded-3xl bg-white border border-ink-200 px-6 sm:px-12 py-10 sm:py-12 text-center shadow-card">
           <div
             className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50"
             aria-hidden

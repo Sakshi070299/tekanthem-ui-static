@@ -287,7 +287,7 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="section-block bg-ink-50/60 border-y border-ink-200/70">
-        <div className="container-pro max-w-3xl">
+        <div className="container-pro ">
           <SectionHeading eyebrow="FAQ" title="Pricing questions" align="left" />
           <div className="mt-10 divide-y divide-ink-200 border-t border-b border-ink-200">
             {FAQS.map((f) => (

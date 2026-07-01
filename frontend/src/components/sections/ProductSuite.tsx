@@ -20,7 +20,7 @@ const FEATURES: Record<string, string[]> = {
 
 export function ProductSuite() {
   return (
-    <section className="section-block">
+    <section className="py-8 lg:py-12">
       <div className="container-pro">
         <SectionHeading
           eyebrow="The Tekanthem Suite"
@@ -28,29 +28,29 @@ export function ProductSuite() {
           description="Pick the app you need today. Add more as you grow. Everything talks to everything — no integrations, no duplicated data."
         />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((p, i) => {
             const Icon = ICON_MAP[p.icon as keyof typeof ICON_MAP]
             return (
               <Link
                 key={p.slug}
                 href={p.href}
-                className="group relative flex flex-col rounded-2xl border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elevated"
+                className="group relative flex flex-col rounded-2xl border border-ink-200 bg-white p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-elevated"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <div
                   className={cn(
-                    'inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br shadow-sm',
+                    'inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br shadow-sm',
                     p.color,
                   )}
                 >
-                  <Icon className="h-6 w-6 text-white" />
+                  <Icon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-ink-900">
+                <h3 className="mt-3 text-base font-bold text-ink-900">
                   {p.name}
                 </h3>
-                <p className="mt-1.5 text-sm text-ink-600">{p.tagline}</p>
-                <ul className="mt-5 space-y-2 text-sm text-ink-700">
+                <p className="mt-1 text-sm text-ink-600">{p.tagline}</p>
+                <ul className="mt-3 space-y-1.5 text-sm text-ink-700">
                   {FEATURES[p.slug].map((f) => (
                     <li key={f} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
@@ -58,7 +58,7 @@ export function ProductSuite() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 group-hover:text-brand-800">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 group-hover:text-brand-800">
                   Learn more
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>

@@ -12,12 +12,12 @@ const FOCUS_AREAS = [
 
 export function TrustedBy() {
   return (
-    <section className="section-block border-y border-ink-200/70 bg-ink-50/40">
+    <section className="py-6 lg:py-8 border-y border-ink-200/70 bg-ink-50/40">
       <div className="container-pro">
         <p className="text-center text-xs font-semibold uppercase tracking-wider text-ink-500">
           Built in India · Early product — we work closely with pilot teams shaping the roadmap
         </p>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-6 items-center">
+        <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-4 items-center">
           {FOCUS_AREAS.map((name) => (
             <div
               key={name}

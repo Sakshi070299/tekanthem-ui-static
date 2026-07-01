@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         <tr><td style="padding:8px 0;color:#64748b">Phone</td><td style="padding:8px 0">${escapeHtml(data.phone || '—')}</td></tr>
         <tr><td style="padding:8px 0;color:#64748b">Company</td><td style="padding:8px 0">${escapeHtml(data.company)}</td></tr>
         <tr><td style="padding:8px 0;color:#64748b">Team size</td><td style="padding:8px 0">${escapeHtml(data.employees || '—')}</td></tr>
-        <tr><td style="padding:8px 0;color:#64748b">Interested in</td><td style="padding:8px 0">${escapeHtml(data.product ? (PRODUCT_LABELS[data.product] ?? data.product) : '—')}</td></tr>
+        <tr><td style="padding:8px 0;color:#64748b">Interested in</td><td style="padding:8px 0">${escapeHtml(data.product?.length ? data.product.map((p) => PRODUCT_LABELS[p] ?? p).join(', ') : '—')}</td></tr>
       </table>
       <p style="color:#64748b;font-size:14px;margin-bottom:4px">Message</p>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px;font-size:14px;white-space:pre-wrap">${escapeHtml(data.message)}</div>

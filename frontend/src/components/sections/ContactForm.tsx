@@ -9,6 +9,14 @@ import { Button } from '@/components/ui/Button'
 import { contactFormSchema, type ContactFormValues } from '@/lib/validators'
 import { cn } from '@/lib/utils'
 
+const PRODUCTS = [
+  { value: 'suite', label: 'Full Suite' },
+  { value: 'finance', label: 'Finance' },
+  { value: 'payroll', label: 'Payroll' },
+  { value: 'cnf', label: 'C&F' },
+  { value: 'crm', label: 'CRM' },
+] as const
+
 export function ContactForm() {
   const params = useSearchParams()
   const intentParam = params.get('intent') as ContactFormValues['intent'] | null
@@ -18,6 +26,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     setValue,
+    watch,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
@@ -139,16 +148,39 @@ export function ContactForm() {
             <option value="1000+">1000+</option>
           </select>
         </Field>
-        <Field label="Interested in">
-          <select {...register('product')} className={fieldClass(false)}>
-            <option value="">Select a product</option>
-            <option value="suite">The full Tekanthem Suite</option>
-            <option value="finance">Tekanthem Finance</option>
-            <option value="payroll">Tekanthem Payroll</option>
-            <option value="cnf">Tekanthem C&F</option>
-            <option value="crm">Tekanthem CRM</option>
-          </select>
-        </Field>
+        <fieldset>
+          <legend className="block text-sm font-medium text-ink-800 mb-1.5">
+            Interested in
+          </legend>
+          <div className="flex flex-wrap gap-2">
+            {PRODUCTS.map((p) => {
+              const selected = (watch('product') ?? []).includes(p.value)
+              return (
+                <button
+                  key={p.value}
+                  type="button"
+                  onClick={() => {
+                    const current = watch('product') ?? []
+                    setValue(
+                      'product',
+                      selected
+                        ? current.filter((v) => v !== p.value)
+                        : [...current, p.value],
+                    )
+                  }}
+                  className={cn(
+                    'rounded-full border px-3 py-1.5 text-xs font-medium transition-colors',
+                    selected
+                      ? 'bg-brand-600 border-brand-600 text-white'
+                      : 'bg-white border-ink-200 text-ink-600 hover:border-brand-400 hover:text-brand-700',
+                  )}
+                >
+                  {p.label}
+                </button>
+              )
+            })}
+          </div>
+        </fieldset>
       </div>
 
       <Field label="How can we help?" error={errors.message?.message}>

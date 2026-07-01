@@ -48,7 +48,7 @@ const QUOTES = [
 
 export function Testimonials() {
   return (
-    <section className="section-block">
+    <section className="py-8 lg:py-12">
       <div className="container-pro">
         <SectionHeading
           eyebrow="Customer love"
@@ -56,11 +56,11 @@ export function Testimonials() {
           description="Real stories from real businesses running their operations on Tekanthem."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {QUOTES.map((q) => (
             <figure
               key={q.author}
-              className="flex flex-col rounded-2xl border border-ink-200 bg-white p-6 shadow-card"
+              className="flex flex-col rounded-2xl border border-ink-200 bg-white p-5 shadow-card"
             >
               <div className="flex gap-0.5 text-amber-400">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -70,7 +70,7 @@ export function Testimonials() {
               <blockquote className="mt-4 flex-1 text-ink-800 leading-relaxed">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 pt-4 border-t border-ink-100">
+              <figcaption className="mt-4 flex items-center gap-3 pt-3 border-t border-ink-100">
                 <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-200 to-accent-200 flex items-center justify-center font-semibold text-ink-800">
                   {q.author
                     .split(' ')
